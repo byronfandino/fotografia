@@ -1,0 +1,289 @@
+body{
+  font-family: 'Dancing Script', cursive;
+  background: black;
+}
+
+.contenedor{
+  animation: desplazamiento 1s;
+}
+
+@-webkit-keyframes desplazamiento{
+  0%{
+    margin-top: 150%;
+  }
+
+  60%{
+    margin-top: -5%;
+  }
+
+  100%{
+    margin-top: 0%;
+  }
+}
+
+@-moz-keyframes desplazamiento{
+  0%{
+    margin-top: 150%;
+  }
+
+  60%{
+    margin-top: -5%;
+  }
+
+  100%{
+    margin-top: 0%;
+  }
+}
+/*Estilos generales del header*/
+.cabecera{
+  background: #5b7989;
+  color:white;
+  border-radius: 10px 10px 0px 0px;
+}
+
+li{
+  display: inline-block;
+}
+
+li:nth-child(1), li:nth-child(3){
+  border-bottom: solid 1px white;
+}
+
+.cabecera a{
+    text-decoration: none;
+    color:white;
+    font-size: 1.5em;
+}
+
+/*---EFECTO IMAGEN-------*/
+.seccion1>figure:first-child{
+  -webkit-filter:blur(10px);
+  filter:blur(10px);
+}
+
+.seccion1>figure:nth-child(even){
+  -webkit-filter:grayscale(100%);
+  filter:grayscale(100%);
+}
+
+.seccion1>figure:nth-child(3){
+  -webkit-filter:sepia(90%);
+  filter:sepia(90%);
+}
+
+
+
+/*Parámetos generales del Footer*/
+footer{
+  width: 100%;
+  background: #C6d5c5;
+  border-radius:0px 0px 10px 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding-bottom: 1em;
+}
+
+footer a{
+  text-decoration: none;
+  color:black;
+}
+
+footer p{
+  display: block;
+}
+
+footer h3{
+  font-size: 1.7em;
+  margin-bottom: 10px;
+}
+
+footer p, footer a{
+  margin: 5px 0px;
+  font-size: 1.2em;
+}
+
+/*Añadiendo imagenes al content del before*/
+.facebook{
+  position: relative;
+  left:1.3em;
+}
+
+.facebook::before{
+  content:url('../iconos/facebook.svg');
+  width:1.2em;
+  height:1.2em;
+  position: absolute;
+  left:-1.3em;
+}
+
+.twitter{
+  position: relative;
+  left:1.3em;
+}
+
+.twitter::before{
+  content:url('../iconos/twitter.svg');
+  width:1.2em;
+  height:1.2em;
+  position: absolute;
+  left:-1.3em;
+}
+
+.linkedin{
+  position: relative;
+  left:1.3em;
+}
+
+.linkedin::before{
+  content:url('../iconos/linkedin.svg');
+  width:1.2em;
+  height:1.2em;
+  position: absolute;
+  left:-1.3em;
+}
+
+.c-right{
+  position: relative;
+  left:1.3em;
+}
+
+.c-right::before{
+  content:url('../iconos/copyright.svg');
+  width:1.2em;
+  height:1.2em;
+  position: absolute;
+  left:-1.3em;
+}
+
+/*Tamaño Desktop*/
+@media (min-width:901px){
+  .contenedor{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /*------HEADER-----*/
+
+  .cabecera{
+    padding: 0.5em 0em;
+  }
+
+  h1{
+      display: inline-block;
+      text-shadow: 2px 2px 2px #02010a;
+      margin-left: 1em;
+      font-size: 2.4em;
+  }
+
+  nav{
+      margin-top: 1.5em;
+      margin-right: 0.8em;
+      float: right;
+      width: 15em;
+  }
+
+  ul{
+    padding-left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+
+  /*-------------SECCION1-------------*/
+  .seccion1{
+    width: 100%;
+    background:#82c3a6;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .seccion1>figure{
+    /*Se deja la margen que maneja la etiqueta figure,
+      para evitar que ocupe todo el ancho del section*/
+    width: 28%;
+    margin: 1em 0.2em;;
+  }
+
+  .seccion1>figure>img{
+    width:100%;
+  }
+
+  /*---------FOOTER-------*/
+  footer>div{
+    width:20%;
+  }
+}
+
+/*Tamaño para celulares*/
+@media (max-width:900px){
+  .contenedor{
+    width:100%;
+  }
+
+  /*----header-----*/
+  .cabecera{
+    padding: 0.5em 0em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  h1{
+      text-shadow: 2px 2px 2px #02010a;
+      text-align: center;
+      font-size: 2.5em;
+      width: 50%;
+      margin: 0;
+  }
+
+  nav{
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+  }
+
+  ul{
+    width: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+
+  /*-----SECCION1-------*/
+  .seccion1{
+    width: 100%;
+    background:#82c3a6;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .seccion1>figure{
+    /*Se deja la margen que maneja la etiqueta figure,
+      para evitar que ocupe todo el ancho del section*/
+    width: 100%;
+  }
+
+  .seccion1>figure>img{
+    width:100%;
+  }
+
+  /*-----FOOTER---------*/
+  /*-----FOOTER---------*/
+  footer div{
+    width: 90%;
+    position:relative;
+    left:2em;
+  }
+
+  footer a, footer p, h3{
+    width:90%;
+  }
+
+}

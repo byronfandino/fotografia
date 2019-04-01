@@ -1,0 +1,322 @@
+body{
+  font-family: 'Dancing Script', cursive;
+  background: black;
+}
+
+.contenedor{
+  animation: desplazamiento 1s;
+}
+
+@-webkit-keyframes desplazamiento{
+  0%{
+    margin-top: 150%;
+  }
+
+  60%{
+    margin-top: -5%;
+  }
+
+  100%{
+    margin-top: 0%;
+  }
+}
+
+@-moz-keyframes desplazamiento{
+  0%{
+    margin-top: 150%;
+  }
+
+  60%{
+    margin-top: -5%;
+  }
+
+  100%{
+    margin-top: 0%;
+  }
+}
+/*Estilos generales del header*/
+.cabecera{
+  background: #5b7989;
+  color:white;
+  border-radius: 10px 10px 0px 0px;
+}
+
+li{
+  display: inline-block;
+}
+
+li:nth-child(2), li:nth-child(3){
+  border-bottom: solid 1px white;
+}
+
+.cabecera a{
+    text-decoration: none;
+    color:white;
+    font-size: 1.5em;
+}
+/*-------------SECCION1-------------*/
+.seccion1{
+  width: 100%;
+  background:#82c3a6;
+  display: flex;
+}
+
+.seccion1>figure{
+  /*Se deja la margen que maneja la etiqueta figure,
+    para evitar que ocupe todo el ancho del section*/
+  width: 100%;
+}
+
+.seccion1>figure>img{
+  width:100%;
+}
+
+/*----------SECCION2-------------*/
+.seccion2{
+  width: 100%;
+  background: #d5c75f;
+  /*El borde de 1px lo propone la guia de la actividad, no obstante, no veo la diferencia visual*/
+  border-width: 1px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+img{
+  box-shadow: 2px 2px 3px 2px #02010a;
+}
+
+/*Animaciones imagenes*/
+#paisaje{
+  transition-duration: 0.8s;
+}
+
+#paisaje:hover{
+    /*El borde de 2px lo propone la guia de la actividad, no obstante, no veo la diferencia visual*/
+  border-width: 2px;
+  box-shadow: 0px 0px 4px 2px #82c3a6;
+  transform:rotate(10deg);
+}
+
+#retrato{
+  transition-duration: 0.8s;
+}
+
+#retrato:hover{
+  transform: translate(20px,-5px);
+    /*El borde de 2px lo propone la guia de la actividad, no obstante, no veo la diferencia visual*/
+  border-width: 2px;
+  box-shadow: 0px 0px 4px 2px #82c3a6;
+}
+
+/*Parametros generales de los vinculos de las imagenes*/
+
+.seccion2 figcaption>p{
+  text-align: center;
+  margin-top: 0;
+}
+
+figcaption>p>a{
+  text-decoration: none;
+  border-bottom: 2px solid black;
+  color:black;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/*Parámetos generales del Footer*/
+footer{
+  width: 100%;
+  background: #C6d5c5;
+  border-radius:0px 0px 10px 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding-bottom: 1em;
+}
+
+footer a{
+  text-decoration: none;
+  color:black;
+}
+
+footer p{
+  display: block;
+}
+
+footer h3{
+  font-size: 1.7em;
+  margin-bottom: 10px;
+}
+
+footer p, footer a{
+  margin: 5px 0px;
+  font-size: 1.2em;
+}
+
+/*Añadiendo imagenes al content del before*/
+.facebook{
+  position: relative;
+  left:1.3em;
+}
+
+.facebook::before{
+  content:url('../iconos/facebook.svg');
+  width:1.2em;
+  height:1.2em;
+  position: absolute;
+  left:-1.3em;
+}
+
+.twitter{
+  position: relative;
+  left:1.3em;
+}
+
+.twitter::before{
+  content:url('../iconos/twitter.svg');
+  width:1.2em;
+  height:1.2em;
+  position: absolute;
+  left:-1.3em;
+}
+
+.linkedin{
+  position: relative;
+  left:1.3em;
+}
+
+.linkedin::before{
+  content:url('../iconos/linkedin.svg');
+  width:1.2em;
+  height:1.2em;
+  position: absolute;
+  left:-1.3em;
+}
+
+.c-right{
+  position: relative;
+  left:1.3em;
+}
+
+.c-right::before{
+  content:url('../iconos/copyright.svg');
+  width:1.2em;
+  height:1.2em;
+  position: absolute;
+  left:-1.3em;
+}
+
+/*Tamaño Desktop*/
+@media (min-width:901px){
+  .contenedor{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /*------HEADER-----*/
+
+  .cabecera{
+    padding: 0.5em 0em;
+  }
+
+  h1{
+      display: inline-block;
+      text-shadow: 2px 2px 2px #02010a;
+      margin-left: 1em;
+      font-size: 2.4em;
+  }
+
+  nav{
+      margin-top: 1.5em;
+      margin-right: 0.8em;
+      float: right;
+      width: 15em;
+  }
+
+  ul{
+    padding-left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+
+  /*-------SECCION 2-------*/
+  .seccion2>figure{
+    width:40%;
+  }
+
+  .seccion2>figure>a>img{
+    width:100%;
+  }
+
+  /*---------FOOTER-------*/
+  footer>div{
+    width:20%;
+  }
+}
+
+/*Tamaño para celulares*/
+@media (max-width:900px){
+
+  .contenedor, .cabecera, .seccion1, footer{
+    width:100%;
+    margin:0;
+  }
+
+  /*----header-----*/
+  .cabecera{
+    padding: 0.5em 0em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  h1{
+      text-shadow: 2px 2px 2px #02010a;
+      text-align: center;
+      font-size: 2.5em;
+      width: 50%;
+      margin: 0;
+  }
+
+  nav{
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+  }
+
+  ul{
+    width: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+
+  /*----SECCION 2-----*/
+  .seccion2>a{
+    width: 100%;
+  }
+
+  .seccion2>figure{
+    width:100%;
+  }
+
+  .seccion2>figure>a>img{
+    width:100%;
+  }
+
+  /*-----FOOTER---------*/
+  footer div{
+    width: 90%;
+    position:relative;
+    left:2em;
+  }
+
+  footer a, footer p, h3{
+    width:90%;
+  }
+
+}
